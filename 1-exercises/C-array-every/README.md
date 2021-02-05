@@ -9,7 +9,7 @@ You want to check that every student in the array has a name longer than 3 chara
 We can write a function that returns true or false:
 
 ```js
-function isAboveThreshold(name) {
+function isAboveThreshold(name) { 
   return name.length > 3;
 }
 ```

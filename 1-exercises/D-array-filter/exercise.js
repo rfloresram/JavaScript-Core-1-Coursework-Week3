@@ -6,9 +6,12 @@
   - Do not edit any of the existing code
 */
 
-var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
+var pairingArr = [[0, 3], [1, 2], [2, 1], null, [1], false, "Nope!"];
 
-var pairsByIndex; // Complete this statement
+let elementToPair = function(iteM) {
+  return Array.isArray(iteM) && iteM.length === 2;
+};
+var pairsByIndex = pairingArr.filter(elementToPair); 
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
