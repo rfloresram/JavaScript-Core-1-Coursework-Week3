@@ -21,7 +21,13 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe() {}
+ function functionElement(arr) {
+    const bushes = arr.every((bush => bush === "pink"))
+      if(bushes) {
+      return "Bush is safe to eat from"
+    }
+    return "Toxic! Leave bush alone!";
+  }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -44,13 +50,18 @@ function test(test_name, actual, expected) {
 }
 
 test(
-  "isBushSafe funtion works - case 1",
-  isBushSafe(bushBerryColours1),
+  "functionElement function works - case 1",
+  functionElement(bushBerryColours1),
   "Toxic! Leave bush alone!"
 );
 
 test(
-  "isBushSafe funtion works - case 1",
-  isBushSafe(bushBerryColours2),
+  "functionElement function works - case 1",
+  functionElement(bushBerryColours2),
   "Bush is safe to eat from"
 );
+
+/*
+functionElement function works - case 1: PASSED
+functionElement function works - case 1: PASSED
+*/

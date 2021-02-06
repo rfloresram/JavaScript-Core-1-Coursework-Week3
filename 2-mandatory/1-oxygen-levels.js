@@ -11,7 +11,9 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function safeLevels(arr) {
+    const safeLevels = (arr) => arr.map(level => level.substring(0, 4)).find(num => num > 19.5 && num < 23.5) + "%"
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -22,11 +24,11 @@ const oxygenLevels3 = ["200%", "21.1%"];
 const util = require("util");
 
 function test(test_name, actual, expected) {
-  let status;
-  if (actual === expected) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
+ let status;
+    if (actual === expected) {
+        status = "PASSED";
+    } else {
+        status = `FAILED: expected: ${util.inspect(
       expected
     )} but your function returned: ${util.inspect(actual)}`;
   }
@@ -34,8 +36,14 @@ function test(test_name, actual, expected) {
   console.log(`${test_name}: ${status}`);
 }
 
-test("findSafeOxygenLevel function works - case 1", findSafeOxygenLevel(oxygenLevels1), "19.9%");
+test("safeLevels function works - case 1", safeLevels(oxygenLevels1), "19.9%");
 
-test("findSafeOxygenLevel function works - case 2", findSafeOxygenLevel(oxygenLevels2), "20.2%");
+test("safeLevels function works - case 2", safeLevels(oxygenLevels2), "20.2%");
 
-test("findSafeOxygenLevel function works - case 3", findSafeOxygenLevel(oxygenLevels3), "21.1%");
+test("safeLevels function works - case 3", safeLevels(oxygenLevels3), "21.1%");
+
+/* 
+safeLevels function works - case 1: FAILED: expected: '19.9%' but your function returned: undefined
+safeLevels function works - case 2: FAILED: expected: '20.2%' but your function returned: undefined
+safeLevels function works - case 3: FAILED: expected: '21.1%' but your function returned: undefined
+*/
